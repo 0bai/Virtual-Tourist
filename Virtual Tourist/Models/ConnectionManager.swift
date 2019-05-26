@@ -61,7 +61,7 @@ class ConnectionManager {
             return json
         } catch {
             self.delegate?.serverError(error: "Internal Error", details: "something went wrong while wrapping the data!")
-            return "{\"error\": \"something went wrong while encoding\"}".data(using: .utf8)!
+            return error as! Data 
         }
     }
     
