@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TravelLocationsMapViewController.swift
 //  Virtual Tourist
 //
 //  Created by Obai Alnajjar on 5/26/19.
@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
+    
 
 }
-

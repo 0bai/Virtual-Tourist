@@ -7,20 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1F06A4229A7B6600908987 /* TravelLocationsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06A3229A7B6600908987 /* TravelLocationsMapViewController.swift */; };
+		2A1F06A6229A7B7E00908987 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06A5229A7B7E00908987 /* PhotoAlbumViewController.swift */; };
+		2A1F06A8229A7C6500908987 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06A7229A7C6500908987 /* CollectionViewCell.swift */; };
+		2A1F06AE229A7D7900908987 /* Virtual_Tourist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06AC229A7D7900908987 /* Virtual_Tourist.xcdatamodeld */; };
 		2A5BA29E229A644700A3F540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BA29D229A644700A3F540 /* AppDelegate.swift */; };
-		2A5BA2A0229A644700A3F540 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BA29F229A644700A3F540 /* ViewController.swift */; };
 		2A5BA2A3229A644700A3F540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BA2A1229A644700A3F540 /* Main.storyboard */; };
-		2A5BA2A6229A644700A3F540 /* Virtual_Tourist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BA2A4229A644700A3F540 /* Virtual_Tourist.xcdatamodeld */; };
 		2A5BA2A8229A644A00A3F540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BA2A7229A644A00A3F540 /* Assets.xcassets */; };
 		2A5BA2AB229A644A00A3F540 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BA2A9229A644A00A3F540 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A1F06A3229A7B6600908987 /* TravelLocationsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLocationsMapViewController.swift; sourceTree = "<group>"; };
+		2A1F06A5229A7B7E00908987 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		2A1F06A7229A7C6500908987 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		2A1F06AD229A7D7900908987 /* Virtual_Tourist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Virtual_Tourist.xcdatamodel; sourceTree = "<group>"; };
 		2A5BA29A229A644700A3F540 /* Virtual Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Tourist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5BA29D229A644700A3F540 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A5BA29F229A644700A3F540 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A5BA2A2229A644700A3F540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2A5BA2A5229A644700A3F540 /* Virtual_Tourist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Virtual_Tourist.xcdatamodel; sourceTree = "<group>"; };
 		2A5BA2A7229A644A00A3F540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A5BA2AA229A644A00A3F540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A5BA2AC229A644A00A3F540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,14 +61,56 @@
 			isa = PBXGroup;
 			children = (
 				2A5BA29D229A644700A3F540 /* AppDelegate.swift */,
-				2A5BA29F229A644700A3F540 /* ViewController.swift */,
-				2A5BA2A1229A644700A3F540 /* Main.storyboard */,
-				2A5BA2A7229A644A00A3F540 /* Assets.xcassets */,
-				2A5BA2A9229A644A00A3F540 /* LaunchScreen.storyboard */,
-				2A5BA2AC229A644A00A3F540 /* Info.plist */,
-				2A5BA2A4229A644700A3F540 /* Virtual_Tourist.xcdatamodeld */,
+				2A5BA2B2229A645D00A3F540 /* Models */,
+				2A5BA2B3229A646700A3F540 /* Views */,
+				2A5BA2B4229A646E00A3F540 /* Controllers */,
+				2A5BA2B5229A647B00A3F540 /* Resources */,
 			);
 			path = "Virtual Tourist";
+			sourceTree = "<group>";
+		};
+		2A5BA2B2229A645D00A3F540 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A1F06AC229A7D7900908987 /* Virtual_Tourist.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A5BA2B3229A646700A3F540 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A5BA2B7229A64E100A3F540 /* Storyboards */,
+				2A1F06A7229A7C6500908987 /* CollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A5BA2B4229A646E00A3F540 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A1F06A3229A7B6600908987 /* TravelLocationsMapViewController.swift */,
+				2A1F06A5229A7B7E00908987 /* PhotoAlbumViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2A5BA2B5229A647B00A3F540 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A5BA2A7229A644A00A3F540 /* Assets.xcassets */,
+				2A5BA2AC229A644A00A3F540 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2A5BA2B7229A64E100A3F540 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2A5BA2A1229A644700A3F540 /* Main.storyboard */,
+				2A5BA2A9229A644A00A3F540 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A5BA2A0229A644700A3F540 /* ViewController.swift in Sources */,
-				2A5BA2A6229A644700A3F540 /* Virtual_Tourist.xcdatamodeld in Sources */,
+				2A1F06A8229A7C6500908987 /* CollectionViewCell.swift in Sources */,
+				2A1F06AE229A7D7900908987 /* Virtual_Tourist.xcdatamodeld in Sources */,
 				2A5BA29E229A644700A3F540 /* AppDelegate.swift in Sources */,
+				2A1F06A4229A7B6600908987 /* TravelLocationsMapViewController.swift in Sources */,
+				2A1F06A6229A7B7E00908987 /* PhotoAlbumViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YKZDST5L5E;
-				INFOPLIST_FILE = "Virtual Tourist/Info.plist";
+				INFOPLIST_FILE = "Virtual Tourist/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YKZDST5L5E;
-				INFOPLIST_FILE = "Virtual Tourist/Info.plist";
+				INFOPLIST_FILE = "Virtual Tourist/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -342,12 +390,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2A5BA2A4229A644700A3F540 /* Virtual_Tourist.xcdatamodeld */ = {
+		2A1F06AC229A7D7900908987 /* Virtual_Tourist.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2A5BA2A5229A644700A3F540 /* Virtual_Tourist.xcdatamodel */,
+				2A1F06AD229A7D7900908987 /* Virtual_Tourist.xcdatamodel */,
 			);
-			currentVersion = 2A5BA2A5229A644700A3F540 /* Virtual_Tourist.xcdatamodel */;
+			currentVersion = 2A1F06AD229A7D7900908987 /* Virtual_Tourist.xcdatamodel */;
 			path = Virtual_Tourist.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
