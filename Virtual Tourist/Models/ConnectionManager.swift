@@ -61,7 +61,7 @@ class ConnectionManager {
             return json
         } catch {
             self.delegate?.serverError(error: "Internal Error", details: "something went wrong while wrapping the data!")
-            return error as! Data 
+            return error as! Data
         }
     }
     

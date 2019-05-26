@@ -26,7 +26,9 @@ struct PhotoURL {
         urlComponents.scheme = scheme
         urlComponents.host = host
         urlComponents.path = path
-        urlComponents.queryItems = [URLQueryItem(name: "format", value: "json")]
+        urlComponents.queryItems = [
+            URLQueryItem(name: "format", value: "json"),
+            URLQueryItem(name: "nojsoncallback", value: "1")]
         return urlComponents.url!
     }
 }
