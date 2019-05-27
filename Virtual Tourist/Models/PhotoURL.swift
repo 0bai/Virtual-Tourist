@@ -10,9 +10,9 @@ import Foundation
 
 struct PhotoURL {
     var farmID: Int = -1
-    var serverID: Int = -1
-    var photoID: Int = -1
-    var secret: Int = -1
+    var serverID: String = ""
+    var photoID: String = ""
+    var secret: String = ""
     let scheme = "https"
     var host: String {
         return "farm\(farmID).staticflickr.com"
