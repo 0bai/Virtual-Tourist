@@ -11,7 +11,7 @@ import Foundation
 extension ConnectionManager{
     
     internal static func fireRequest(url:URL, headers:[String:String]?, body:Data?, responseHandler:@escaping (_ data:Data, _ response:URLResponse?, _ error:Error?)->()) {
-        
+        print(url)
         var request = URLRequest(url: url)
         
         headers?.forEach{(key, value) in
@@ -23,6 +23,7 @@ extension ConnectionManager{
         let session = URLSession.shared
         
         let task = session.dataTask(with: request) { data, response, error in
+
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
                 self.delegate?.serverError(error: "Connection Error", details: "Please check your internet connection!")
                 return
@@ -58,7 +59,7 @@ extension ConnectionManager{
             let genericObject =  try decoder.decode(type.self, from: data)
             return genericObject
         } catch  {
-            print("error while decoding \(type)")
+            print("error while decoding \(error.localizedDescription)")
             delegate?.serverError(error: "Internal Error", details: "Error while unwrapping the data!")
             return error as! Codable
         }

@@ -8,75 +8,65 @@
 
 
 import Foundation
+import CoreData
+import UIKit
+import MapKit
 
-@objc protocol ConnectionDelegate{
-    
-    func photosRetrieved()
-    func serverError(error:String, details: String)
-    
+protocol ConnectionDelegate{
+    func listRetrieved(size: Int)
+    func serverError(error: String, details: String)
 }
 
 class ConnectionManager {
     
     static var delegate:ConnectionDelegate!
-    static var sessionURL = URLComponents()
-    static var userURL = URLComponents()
     
+    internal static var dataController: DataController!
     
-    static func fireRequest(url:URLComponents, headers:[String:String]?, body:Data?, responseHandler:@escaping (_ data:Data, _ response:URLResponse?, _ error:Error?)->()) {
+    static func getPhotoAlbum(pinID: NSManagedObjectID, coordinates: CLLocationCoordinate2D){
+        let url = FlickrAPI(latitude: coordinates.latitude, longitude: coordinates.longitude).getURL()
+        fireRequest(url: url, headers: nil, body: nil){
+            data, response, error in
+            let json: PhotosJSON = decode(data: data, type: PhotosJSON.self) as! PhotosJSON
+            let photos: Photos = json.photos
+            delegate.listRetrieved(size: photos.photo.count)
+            DispatchQueue.global(qos: .background).async {
+                getPhotos(photos, pinID: pinID)
+            }
+        }
+    }
+    
+    static func getPhotos(_ photos: Photos, pinID: NSManagedObjectID) {
         
-        var request = URLRequest(url: url.url!)
+        var pin: Pin!
         
-        headers?.forEach{(key, value) in
-            request.addValue(value, forHTTPHeaderField: key)
+        dataController.backgroundContext.perform {
+            pin = dataController.backgroundContext.object(with: pinID) as? Pin
         }
         
-        request.httpBody = body
-        
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: request) { data, response, error in
-            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
-                self.delegate?.serverError(error: "Connection Error", details: "Please check your internet connection!")
-                return
-            }
+        photos.photo.forEach{
+            photoJSON in
+            let photoURL = PhotoURL(farmID: photoJSON.farm, serverID: photoJSON.server, photoID: photoJSON.id, secret: photoJSON.secret).getURL()
             
-            switch statusCode {
-            case 200 ... 299 :
-                responseHandler(data!, response, error)
-            default :
-                self.delegate?.serverError(error: "Server Error", details: "Something went wrong!")
+            fireRequest(url: photoURL, headers: nil, body: nil){
+                data, response, error in
                 
+                dataController.backgroundContext.performAndWait {
+                    let photo = Photo(context: dataController.backgroundContext)
+                    photo.image = data
+                    photo.pin = pin
+                    photo.created = Date()
+                    
+                    if dataController.backgroundContext.hasChanges{
+                        sleep(2)
+                        try? dataController.backgroundContext.save()
+                    }
+                }
             }
-        }
-        
-        task.resume()
-    }
-    
-    static func encode<T:Codable>(object:T) -> Data{
-        
-        let encoder = JSONEncoder()
-        do {
-            let json = try encoder.encode(object)
-            return json
-        } catch {
-            self.delegate?.serverError(error: "Internal Error", details: "something went wrong while wrapping the data!")
-            return error as! Data
-        }
-    }
-    
-    static func decode<T: Codable>(data:Data, type:T.Type) -> Codable{
-        do {
-            let decoder = JSONDecoder()
-            let genericObject =  try decoder.decode(type.self, from: data)
-            return genericObject
-        } catch  {
-            print("error while decoding \(type)")
-            delegate?.serverError(error: "Internal Error", details: "Error while unwrapping the data!")
-            return error as! Codable
         }
     }
 }
+
 
 
 

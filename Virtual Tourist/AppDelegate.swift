@@ -10,22 +10,29 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    class AppDelegate: UIResponder, UIApplicationDelegate {
+    
     var window: UIWindow?
     
     let dataController = DataController.init(modelName: "Virtual_Tourist")
-
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        dataController.load()
+        
+        let travelLocationMapViewController = window?.rootViewController as! TravelLocationsMapViewController
+        travelLocationMapViewController.dataController = dataController
+        
+        ConnectionManager.dataController = dataController
+        
         return true
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
-    saveContext()
+        saveContext()
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
         saveContext()
     }

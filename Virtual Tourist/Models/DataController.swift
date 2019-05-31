@@ -12,12 +12,11 @@ import CoreData
 class DataController {
     
     let persistentContainer:NSPersistentContainer
+    let backgroundContext:NSManagedObjectContext!
     
     var viewContext:NSManagedObjectContext {
         return persistentContainer.viewContext
     }
-    
-    let backgroundContext:NSManagedObjectContext!
     
     init(modelName:String) {
         persistentContainer = NSPersistentContainer(name: modelName)
@@ -25,11 +24,15 @@ class DataController {
     }
     
     func configureContexts() {
+        
         viewContext.automaticallyMergesChangesFromParent = true
         backgroundContext.automaticallyMergesChangesFromParent = true
         
         backgroundContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
+        
+        backgroundContext.persistentStoreCoordinator = viewContext.persistentStoreCoordinator
+        
     }
     
     func load(completion: (() -> Void)? = nil) {
