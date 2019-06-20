@@ -25,7 +25,7 @@
                                 </connections>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MGv-OA-fKT" secondAttribute="trailing" id="7mJ-zY-uJ1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MGv-OA-fKT" secondAttribute="bottom" id="M30-hb-P3U"/>
@@ -47,8 +47,8 @@
         <scene sceneID="a6P-yU-5jd">
             <objects>
                 <navigationController id="6EB-bQ-UVC" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KEb-tv-amO">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="KEb-tv-amO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -65,17 +65,17 @@
             <objects>
                 <viewController id="f2u-Qk-HNr" customClass="PhotoAlbumViewController" customModule="Virtual_Tourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gPR-09-fWs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-pV-VAf">
-                                <rect key="frame" x="0.0" y="88" width="414" height="193.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="193.5"/>
                                 <connections>
                                     <outlet property="delegate" destination="f2u-Qk-HNr" id="whd-am-Tx9"/>
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkA-WY-opM">
-                                <rect key="frame" x="0.0" y="281.5" width="414" height="550.5"/>
+                                <rect key="frame" x="0.0" y="193.5" width="414" height="550.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EFY-Z3-coX">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="550.5"/>
@@ -143,14 +143,14 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="748" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObY-Td-OwZ">
-                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="744" width="414" height="30"/>
                                 <state key="normal" title="New Collection"/>
                                 <connections>
                                     <action selector="newCollection:" destination="f2u-Qk-HNr" eventType="touchUpInside" id="sN4-4j-4is"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="qMd-pV-VAf" firstAttribute="top" secondItem="Qu0-zz-3xi" secondAttribute="top" id="1Jr-Zy-yxT"/>
                             <constraint firstItem="Qu0-zz-3xi" firstAttribute="bottom" secondItem="ObY-Td-OwZ" secondAttribute="bottom" id="6iR-WZ-zDH"/>
@@ -173,7 +173,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="EFY-Z3-coX" id="hqU-dw-974"/>
                         <outlet property="mapView" destination="qMd-pV-VAf" id="j82-hb-6CB"/>

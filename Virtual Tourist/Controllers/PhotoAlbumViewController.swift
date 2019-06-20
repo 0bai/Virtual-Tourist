@@ -26,6 +26,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDelegate, UICo
     var insertedIndexPaths: [IndexPath]!
     var deletedIndexPaths: [IndexPath]!
     var updatedIndexPaths: [IndexPath]!
+    var movedIndexPaths: [[IndexPath:IndexPath]]!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -145,6 +146,14 @@ extension PhotoAlbumViewController{
             print(error)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        collectionView.moveItem(at: sourceIndexPath, to: destinationIndexPath)
+    }
 }
 
 //MARK:- MapView Delegate
@@ -186,10 +195,14 @@ extension PhotoAlbumViewController {
             collectionView.insertItems(at: insertedIndexPaths)
             collectionView.deleteItems(at: deletedIndexPaths)
             collectionView.reloadItems(at: updatedIndexPaths)
+            movedIndexPaths.forEach({ (item) in
+                collectionView.moveItem(at: item.keys.first!, to: item.values.first!)
+            })
         }, completion: {finished in
             self.insertedIndexPaths = nil
             self.deletedIndexPaths = nil
             self.updatedIndexPaths = nil
+            self.movedIndexPaths = nil
         })
     }
     
@@ -197,10 +210,10 @@ extension PhotoAlbumViewController {
         insertedIndexPaths = [IndexPath]()
         deletedIndexPaths = [IndexPath]()
         updatedIndexPaths = [IndexPath]()
+        movedIndexPaths = [[IndexPath:IndexPath]]()
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
         switch type {
         case .insert:
             insertedIndexPaths.append(newIndexPath!)
@@ -211,6 +224,7 @@ extension PhotoAlbumViewController {
         case .update:
             updatedIndexPaths.append(indexPath!)
         case .move:
+            movedIndexPaths.append([indexPath!:newIndexPath!])
             break
         @unknown default:
             fatalError()

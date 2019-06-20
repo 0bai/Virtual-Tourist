@@ -58,7 +58,7 @@ class ConnectionManager {
                     photo.created = Date()
                     
                     if dataController.backgroundContext.hasChanges{
-                        sleep(2)
+                        sleep(1)
                         try? dataController.backgroundContext.save()
                     }
                 }
