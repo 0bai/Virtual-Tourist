@@ -33,6 +33,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDelegate, UICo
         ConnectionManager.delegate = self
         setupFetchedResultsController()
         addSaveNotificationObserver()
+        setupLongPress()
         cached = fetchedResultsController.fetchedObjects?.count ?? 0 > 0 ? 0.0 : 0.5
         if fetchedResultsController.fetchedObjects?.count ?? 0 == 0 {
             newCollection(self)
@@ -86,6 +87,38 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDelegate, UICo
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func setupLongPress() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(sharePhoto(gestureRecognizer:)))
+        longPress.minimumPressDuration = 1.0
+        collectionView.addGestureRecognizer(longPress)
+    }
+    
+    @objc func sharePhoto(gestureRecognizer: UIGestureRecognizer){
+        guard gestureRecognizer.state == UIGestureRecognizer.State.began else {
+            return
+        }
+
+        let photoIndex = gestureRecognizer.location(in: self.collectionView)
+        
+        if let indexPath = self.collectionView.indexPathForItem(at: photoIndex) {
+            let activityController = UIActivityViewController(activityItems: [UIImage(data:fetchedResultsController.object(at: indexPath).image!)!], applicationActivities: nil)
+            
+//            activityController.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+//                if completed{
+//                    self.save()
+//                }
+//            }
+            
+            present(activityController, animated: true, completion: nil)
+            
+            if let popover = activityController.popoverPresentationController {
+                popover.sourceView = self.view
+            }
+        } else {
+            print("couldn't find index path")
+        }
     }
 }
 
