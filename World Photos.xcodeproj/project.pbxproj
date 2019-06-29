@@ -10,7 +10,7 @@
 		2A1F06A4229A7B6600908987 /* TravelLocationsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06A3229A7B6600908987 /* TravelLocationsMapViewController.swift */; };
 		2A1F06A6229A7B7E00908987 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06A5229A7B7E00908987 /* PhotoAlbumViewController.swift */; };
 		2A1F06A8229A7C6500908987 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06A7229A7C6500908987 /* CollectionViewCell.swift */; };
-		2A1F06AE229A7D7900908987 /* Virtual_Tourist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06AC229A7D7900908987 /* Virtual_Tourist.xcdatamodeld */; };
+		2A1F06AE229A7D7900908987 /* World-Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06AC229A7D7900908987 /* World-Photos.xcdatamodeld */; };
 		2A1F06B0229A804F00908987 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06AF229A804F00908987 /* ConnectionManager.swift */; };
 		2A1F06B2229A92A800908987 /* PhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06B1229A92A800908987 /* PhotoURL.swift */; };
 		2A1F06B4229A990400908987 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F06B3229A990400908987 /* FlickrAPI.swift */; };
@@ -37,7 +37,7 @@
 		2A54AC04229BAE150028D827 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2A54AC06229BB0A40028D827 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		2A54ADE5229BD49700A77A10 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		2A5BA29A229A644700A3F540 /* Virtual Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Tourist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5BA29A229A644700A3F540 /* World Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5BA29D229A644700A3F540 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A5BA2A2229A644700A3F540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A5BA2A7229A644A00A3F540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		2A5BA291229A644700A3F540 = {
 			isa = PBXGroup;
 			children = (
-				2A5BA29C229A644700A3F540 /* Virtual Tourist */,
+				2A5BA29C229A644700A3F540 /* World Photos */,
 				2A5BA29B229A644700A3F540 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,12 +68,12 @@
 		2A5BA29B229A644700A3F540 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A5BA29A229A644700A3F540 /* Virtual Tourist.app */,
+				2A5BA29A229A644700A3F540 /* World Photos.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A5BA29C229A644700A3F540 /* Virtual Tourist */ = {
+		2A5BA29C229A644700A3F540 /* World Photos */ = {
 			isa = PBXGroup;
 			children = (
 				2A5BA29D229A644700A3F540 /* AppDelegate.swift */,
@@ -82,13 +82,13 @@
 				2A5BA2B4229A646E00A3F540 /* Controllers */,
 				2A5BA2B5229A647B00A3F540 /* Resources */,
 			);
-			path = "Virtual Tourist";
+			path = "World Photos";
 			sourceTree = "<group>";
 		};
 		2A5BA2B2229A645D00A3F540 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2A1F06AC229A7D7900908987 /* Virtual_Tourist.xcdatamodeld */,
+				2A1F06AC229A7D7900908987 /* World-Photos.xcdatamodeld */,
 				2A1F06AF229A804F00908987 /* ConnectionManager.swift */,
 				2A1F06B1229A92A800908987 /* PhotoURL.swift */,
 				2A1F06B3229A990400908987 /* FlickrAPI.swift */,
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A5BA299229A644700A3F540 /* Virtual Tourist */ = {
+		2A5BA299229A644700A3F540 /* World Photos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A5BA2AF229A644A00A3F540 /* Build configuration list for PBXNativeTarget "Virtual Tourist" */;
+			buildConfigurationList = 2A5BA2AF229A644A00A3F540 /* Build configuration list for PBXNativeTarget "World Photos" */;
 			buildPhases = (
 				2A5BA296229A644700A3F540 /* Sources */,
 				2A5BA297229A644700A3F540 /* Frameworks */,
@@ -152,9 +152,9 @@
 			);
 			dependencies = (
 			);
-			name = "Virtual Tourist";
+			name = "World Photos";
 			productName = "Virtual Tourist";
-			productReference = 2A5BA29A229A644700A3F540 /* Virtual Tourist.app */;
+			productReference = 2A5BA29A229A644700A3F540 /* World Photos.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2A5BA295229A644700A3F540 /* Build configuration list for PBXProject "Virtual Tourist" */;
+			buildConfigurationList = 2A5BA295229A644700A3F540 /* Build configuration list for PBXProject "World Photos" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -185,7 +185,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A5BA299229A644700A3F540 /* Virtual Tourist */,
+				2A5BA299229A644700A3F540 /* World Photos */,
 			);
 		};
 /* End PBXProject section */
@@ -211,7 +211,7 @@
 				2A1F06B2229A92A800908987 /* PhotoURL.swift in Sources */,
 				2A1F06A8229A7C6500908987 /* CollectionViewCell.swift in Sources */,
 				2A1F06B0229A804F00908987 /* ConnectionManager.swift in Sources */,
-				2A1F06AE229A7D7900908987 /* Virtual_Tourist.xcdatamodeld in Sources */,
+				2A1F06AE229A7D7900908987 /* World-Photos.xcdatamodeld in Sources */,
 				2AAEFD4F229CF38000A5DBD7 /* PinAnnotation.swift in Sources */,
 				2A223E9F22A0F42C0020576C /* Alert.swift in Sources */,
 				2A54AC07229BB0A40028D827 /* Photos.swift in Sources */,
@@ -368,12 +368,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YKZDST5L5E;
-				INFOPLIST_FILE = "Virtual Tourist/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/World Photos/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.obai.Virtual-Tourist";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.obai.World-Photos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,12 +386,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YKZDST5L5E;
-				INFOPLIST_FILE = "Virtual Tourist/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/World Photos/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.obai.Virtual-Tourist";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.obai.World-Photos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,7 +401,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A5BA295229A644700A3F540 /* Build configuration list for PBXProject "Virtual Tourist" */ = {
+		2A5BA295229A644700A3F540 /* Build configuration list for PBXProject "World Photos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A5BA2AD229A644A00A3F540 /* Debug */,
@@ -410,7 +410,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A5BA2AF229A644A00A3F540 /* Build configuration list for PBXNativeTarget "Virtual Tourist" */ = {
+		2A5BA2AF229A644A00A3F540 /* Build configuration list for PBXNativeTarget "World Photos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A5BA2B0229A644A00A3F540 /* Debug */,
@@ -422,13 +422,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2A1F06AC229A7D7900908987 /* Virtual_Tourist.xcdatamodeld */ = {
+		2A1F06AC229A7D7900908987 /* World-Photos.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				2A1F06AD229A7D7900908987 /* Virtual_Tourist.xcdatamodel */,
 			);
 			currentVersion = 2A1F06AD229A7D7900908987 /* Virtual_Tourist.xcdatamodel */;
-			path = Virtual_Tourist.xcdatamodeld;
+			path = "World-Photos.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

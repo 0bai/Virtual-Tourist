@@ -1,11 +1,3 @@
-//
-//  Alert.swift
-//  Virtual Tourist
-//
-//  Created by Obai Alnajjar on 5/31/19.
-//  Copyright © 2019 Obai Alnajjar. All rights reserved.
-//
-
 import Foundation
 import UIKit
 

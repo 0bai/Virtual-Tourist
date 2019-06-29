@@ -1,11 +1,3 @@
-//
-//  Helpers.swift
-//  Virtual Tourist
-//
-//  Created by Obai Alnajjar on 5/27/19.
-//  Copyright © 2019 Obai Alnajjar. All rights reserved.
-//
-
 import Foundation
 
 extension ConnectionManager{

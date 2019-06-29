@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Virtual Tourist
-//
-//  Created by Obai Alnajjar on 5/26/19.
-//  Copyright © 2019 Obai Alnajjar. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
@@ -14,7 +6,7 @@ import CoreData
     
     var window: UIWindow?
     
-    let dataController = DataController.init(modelName: "Virtual_Tourist")
+    let dataController = DataController.init(modelName: "World-Photos")
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
